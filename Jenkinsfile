@@ -14,34 +14,34 @@ node {
 
 pipeline {
 	agent any{
-		stages{
-			stage("Build"){
-				steps{
-                       echo"build stage"
-				}
-			}
-			stage("Test"){
-				steps{
-                       echo"test stage"
-				}
-			}
-			stage("Deploy"){
-				steps{
-                       echo"deploy stage"
-				}
-			}
-		}
+		  stages{
+			  stage("Build"){
+				            steps{
+                                echo"build stage"
+				                }
+			                }
+			  stage("Test"){
+				           steps{
+                                echo"test stage"
+				              }
+			             }
+			  stage("Deploy"){
+				           steps{
+                               echo"deploy stage"
+				              }
+			                }
+		         }
 
-	post{
-		always{
-			echo"always"
-		}
-		success{
-			echo"success"
-		}
-		failure{
-			echo"failure"
-		}
-	}
-  }
+	      post{
+		      always{
+			          echo"always"
+		           }
+		      success{
+			          echo"success"
+		            }
+		      failure{
+			          echo"failure"
+		           }
+	         }
+      }
 }
