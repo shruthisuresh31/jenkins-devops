@@ -24,9 +24,7 @@ pipeline {
 				             
 				            steps{
                                 echo" build stage"
-								script{
-								 sh "params.Environment"
-							 }
+								sh "params.Environment"
 				                }
 
 			                }
