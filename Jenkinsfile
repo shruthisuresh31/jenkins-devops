@@ -14,28 +14,25 @@ node {
 
 pipeline {
 	agent any
+
+	parameters{
+		choice(name: "Environment", choices: ["dev","test"], description: "Environment")
+
+	}
 		  stages{
 			  stage("Build"){
 				            steps{
-                                echo"build stage"
+                                echo"${Environment} build stage"
 				                }
 			                }
 			  stage("Test"){
-				             when{
-								 expression{
-									 BRANCH_NAME == "dev"
-								 }
-							 }
+				             
 				           steps{
                                 echo"test stage"
 				              }
 			             }
 			  stage("Deploy"){
-				            when{
-								 expression{
-									 BRANCH_NAME == "master"
-								 }
-							 }
+				            
 				           steps{
                                echo"deploy stage"
 				              }
