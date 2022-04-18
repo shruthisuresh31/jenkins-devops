@@ -21,9 +21,13 @@ pipeline {
 	}
 		  stages{
 			  stage("Build"){
+				             script{
+								 sh "params.Environment"
+							 }
 				            steps{
-                                echo"${Environment} build stage"
+                                echo" build stage"
 				                }
+
 			                }
 			  stage("Test"){
 				             
